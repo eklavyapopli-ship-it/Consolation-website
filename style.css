@@ -1,0 +1,238 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.main{
+    background-image: url('images/1.jpg');
+    background-position: center ;
+    background-size: cover;
+    height: 150vh;
+    /* width: 100%; */
+    background-repeat: no-repeat;
+    position: relative;
+}
+.box{
+    width: 100%;
+    height: 150vh;
+    position: absolute;
+    top: 0;
+    background-color: black;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+.logo img{
+    height: 70px;
+    /* z-index: 2; */
+    
+}
+.logo{
+   z-index: 2;
+   position: absolute;
+   margin:20px;
+
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    inset: 0;
+    z-index: 1;
+}
+
+.Products{
+    list-style: none;
+}
+.nav-link{
+    display: flex;
+    gap: 50px;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+}
+.main_links{
+    display: inline;
+    list-style: none;
+}
+.main_links a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    font-weight: 400;
+}
+.Products a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.dropdown{
+    list-style: none;
+    opacity: 0;
+    position: absolute;
+    border-radius: 10px;
+    background-color: white;
+    list-style: none;
+    top: 25px;
+  padding: 5px;
+  min-width: 180px;
+  /* border-radius: 10px; */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  /* pointer-events: none; */
+  opacity: 0;
+  color: black;
+}
+.dropdown li a{
+    /* text-decoration: none; */
+    color: black;
+    display: block;
+}
+.dropdown li{
+margin: 10px 0;
+padding: 10px;
+}
+.dropdown li:hover{
+    background: black;
+    border-radius: 10px;
+    color: aliceblue;
+    
+}
+.dropdown li:hover a{
+    color: aliceblue;
+}
+.Products:hover .dropdown{
+    opacity: 1;
+}
+.navbar{
+    margin-top: 20px;
+    border-radius: 20px;
+    transition: transform 2s ease 5s;
+    animation-name: navbar_an;
+  animation-duration: 5s;
+  animation-delay: 5s;
+  animation-timing-function: ease-in-out ;
+  animation-fill-mode: forwards;
+  animation-timeline: scroll();
+  animation-range: entry 0% cover 4%;
+  
+}
+
+@keyframes navbar_an {
+  0% {
+    background: transparent;
+  }
+  50%{
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 70px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+}
+.hamburger {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: none; /* default hidden for desktop */
+  z-index: 10;
+}
+
+/* Bars */
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  /* ✅ Align logo and hamburger side by side */
+  .logo img {
+    height: 55px;
+  }
+
+  .hamburger {
+    display: block;
+    z-index: 20;
+  }
+.navbar{
+    opacity: 0;
+}
+.navbar.active{
+    opacity: 1;
+    width: 100%;
+    
+}
+  .nav-link {
+    position: absolute;
+    top: 80px;
+    border-radius: 20px;
+    left: 20px;
+    width:80%;
+    background: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-link.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link li a {
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+  }
+
+  /* Hamburger animation */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Dropdown fix for mobile */
+  .Products:hover .dropdown {
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    top: 0;
+    background: rgb(0, 0, 0);
+    box-shadow: none;
+  }
+
+  .dropdown li a {
+    color: white;
+  }
+
+  .dropdown li a:hover {
+    color: cyan;
+  }
+
+}

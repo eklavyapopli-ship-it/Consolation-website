@@ -3,6 +3,16 @@
     padding: 0;
     
 }
+.body{
+  overflow: hidden;
+  position: relative;
+}
+
+main{
+  background-color: black;
+  position: absolute;
+  width: 100%;
+}
 .main{
     background-image: url('images/1.jpg');
     background-position: center ;
@@ -37,10 +47,15 @@
 .container{
     display: flex;
     justify-content: space-around;
+    width: 100%;
     align-items: center;
-    position: sticky;
-    inset: 0;
-    z-index: 2;
+     position: fixed;
+  top: 1px; /* distance from top of screen */
+  left: 0; /* adjust as needed */
+  z-index: 100; /* stays on top of other elements */
+    
+    /* inset: 0; */
+    /* z-index: 2; */
 }
 
 .Products{
@@ -129,7 +144,7 @@ padding: 10px;
 }
 
 .hero{
-  height: 65%;
+  height: 75%;
   display: flex;
   
   align-items: center;
@@ -155,6 +170,7 @@ padding: 10px;
     transform: scale(1.02);
   }
   100% {
+    
     transform: scale(1.05);
     background: rgba(183, 195, 195, 0.2);
     border-radius: 100px;
@@ -183,6 +199,7 @@ padding: 10px;
   transition: all 0.3s ease;
 }
 @media (max-width: 768px) {
+  
   .hero{
     font-size: 80px;
     position: absolute;
@@ -287,4 +304,40 @@ padding: 10px;
     color: cyan;
   }
 
+  .image-wrapper{
+
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction:column;
+    
+  }
+  .boxes{
+    width: 50%;
+    height: 60%;
+  }
+}
+
+
+.image-wrapper{
+  
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+.boxes{
+  width: 80%;
+  height: 50vh;
+  
+  margin: 30px;
+  /* padding: auto; */
+  /* max-height: 150%; */
+  background-color: aliceblue;
+  border-radius: 20px;
+}
+.boxes:hover{
+  background-color: rgba(128, 128, 128, 0.562);
+  opacity: 5;
 }

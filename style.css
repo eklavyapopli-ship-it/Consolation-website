@@ -198,7 +198,7 @@ padding: 10px;
   background-color: white;
   transition: all 0.3s ease;
 }
-@media (max-width: 768px) {
+@media (max-width: 1508px) {
   
   .hero{
     font-size: 80px;
@@ -223,12 +223,7 @@ padding: 10px;
     
     position: absolute;
   }
-  .bar{
-    
-  }
-  .hamburger.active{
-   
-  }
+
 .navbar{
     opacity: 0;
     display: flex;
